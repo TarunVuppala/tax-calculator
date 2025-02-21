@@ -13,6 +13,7 @@ app.use(express.json());
 const allowedOrigins = [
     "https://tax-calculator-murex.vercel.app",
     "https://tax-calculator-git-main-taruns-projects-93c37392.vercel.app",
+    "https://tax-calculator-taruns-projects-93c37392.vercel.app/",
     "https://tax-calculator-cubtc7d4c-taruns-projects-93c37392.vercel.app",
 ];
 
