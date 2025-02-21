@@ -9,8 +9,25 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
+const allowedOrigins = [
+    "https://tax-calculator-murex.vercel.app",
+    "https://tax-calculator-git-main-taruns-projects-93c37392.vercel.app",
+    "https://tax-calculator-cubtc7d4c-taruns-projects-93c37392.vercel.app",
+];
+
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
+        credentials: true,
+    })
+);
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('MongoDB connected.'))
     .catch((err) => {

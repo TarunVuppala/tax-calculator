@@ -17,7 +17,7 @@ export default function Navbar() {
             href="/records"
             className={cn(
               buttonVariants({ variant: 'outline' }),
-              'border-white text-white hover:bg-purple-50 hover:text-purple-600'
+              'border-white text-black hover:bg-purple-50 hover:text-purple-600'
             )}
           >
             All Records
