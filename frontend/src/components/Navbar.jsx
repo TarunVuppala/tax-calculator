@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils' // Usually from shadcn's init
+import { cn } from '@/lib/utils'
 
 export default function Navbar() {
   return (
@@ -17,7 +17,7 @@ export default function Navbar() {
             href="/records"
             className={cn(
               buttonVariants({ variant: 'outline' }),
-              'border-white text-black hover:bg-purple-50 hover:text-purple-600'
+              'border-white text-purple-600 hover:bg-purple-50 hover:text-purple-600'
             )}
           >
             All Records
@@ -26,7 +26,7 @@ export default function Navbar() {
             href="/records/create"
             className={cn(
               buttonVariants({ variant: 'default' }),
-              'bg-white text-purple-600 hover:bg-purple-50'
+              'border-white text-purple-600 hover:bg-purple-50 hover:text-purple-600'
             )}
           >
             Create Record
