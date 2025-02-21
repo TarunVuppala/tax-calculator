@@ -136,8 +136,6 @@ const useAppStore = create((set, get) => ({
             }
             const data = await res.json()
 
-            const updatedId = data?.taxRecord?._id
-
             set({
                 taxRecord: data.taxRecord || null,
                 taxableIncome: data.taxRecord?.taxableIncome ?? null,
