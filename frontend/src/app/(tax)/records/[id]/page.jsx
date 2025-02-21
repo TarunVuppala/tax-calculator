@@ -47,19 +47,6 @@ export default function RecordDetailsPage() {
     )
   }
 
-  const renderSuggestions = (arr) => {
-    if (!Array.isArray(arr) || arr.length === 0) {
-      return <p className="text-gray-500">No Suggestions</p>
-    }
-    return (
-      <ul className="list-disc list-inside ml-4">
-        {arr.map((sug, idx) => (
-          <li key={idx}>{sug}</li>
-        ))}
-      </ul>
-    )
-  }
-
   return (
     <section className="max-w-4xl mx-auto space-y-6">
       <h2 className="text-3xl font-bold text-purple-700">Tax Record Details</h2>
@@ -83,10 +70,6 @@ export default function RecordDetailsPage() {
         <p>
           <span className="font-semibold">CESS:</span> {taxRecord.cess}
         </p>
-        <div>
-          <p className="font-semibold">Auto-Generated Suggestions:</p>
-          {renderSuggestions(taxRecord.taxSuggestions)}
-        </div>
       </div>
       <div className="flex gap-4 mt-4">
         <Link href={`/records/${id}/edit`}>

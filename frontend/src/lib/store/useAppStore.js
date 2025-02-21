@@ -66,9 +66,7 @@ const useAppStore = create((set, get) => ({
                 finalTax: data.taxRecord?.finalTax ?? null,
                 cess: data.taxRecord?.cess ?? null
             })
-            if (newId && router) {
-                router.push(`/records/${newId}`)
-            }
+            return newId;
         } catch (err) {
             set({ error: err.message })
         } finally {
@@ -146,10 +144,6 @@ const useAppStore = create((set, get) => ({
                 finalTax: data.taxRecord?.finalTax ?? null,
                 cess: data.taxRecord?.cess ?? null
             })
-
-            if (updatedId && router) {
-                router.push(`/records/${updatedId}`)
-            }
         } catch (err) {
             set({ error: err.message })
         } finally {

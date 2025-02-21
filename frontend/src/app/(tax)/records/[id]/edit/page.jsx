@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation' 
 import useAppStore from '@/lib/store/useAppStore'
 import { taxDeductions } from '@/lib/constants/taxConstants'
 import { Label } from '@/components/ui/label'
@@ -33,9 +33,7 @@ export default function EditTaxRecordPage() {
         }
     }, [id, fetchTaxRecordById])
 
-    useEffect(() => {
-        setRouter(router)
-    }, [router])
+    const router = useRouter()
 
     useEffect(() => {
         if (taxRecord) {
@@ -63,6 +61,7 @@ export default function EditTaxRecordPage() {
             deductionsClaimed: deductionsObj,
         }
         await updateTaxRecord(id, updatedFields)
+        router.push(`/records/${id}`)
     }
 
     if (!id) return <p className="text-gray-600">No record ID provided.</p>

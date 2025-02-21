@@ -48,7 +48,10 @@ export default function CreateRecordPage() {
     setAge(localAge)
     setGrossIncome(localGross)
     setDeductionsClaimed(deductionsObj)
-    await createTaxRecord()
+    const id = await createTaxRecord()
+    if (id) {
+      router.push(`/records/${id}`)
+    }
   }
 
   return (
